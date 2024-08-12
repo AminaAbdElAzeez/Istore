@@ -2,22 +2,22 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
-import Root from "./Routes/Root/Root.jsx";
-import ErrorPage from "./Routes/ErrorPage/ErrorPage.jsx";
-import Home from "./Routes/Home/Home.jsx";
-import SignUp from "./Routes/SignUp/SignUp.jsx";
-import LoginIn from "./Routes/LoginIn/LoginIn.jsx";
-import WishList from "./Routes/WishList/WishList.jsx";
-import CheckOut from "./Routes/CheckOut/CheckOut.jsx";
-import Contact from "./Routes/Contact/Contact.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Cart from "./Routes/Cart/Cart.jsx";
-import About from "./Routes/About/About.jsx";
-import CategotreyProducts from "./Routes/CategotreyProducts/CategotreyProducts.jsx";
-import CartProvider from "./Context/CartProvider.jsx";
-import Shop from "./Routes/Shop/Shop.jsx";
-import ProductDetails from "./Routes/ProductDetails/ProductDetails.jsx";
-import { AuthProvider } from "./AuthContext/AuthContext.jsx";
+import { AuthProvider } from "./AuthContext/AuthContext";
+import { CartProvider } from "./Context/CartProvider";
+import Root from "./Routes/Root/Root";
+import ErrorPage from "./Routes/ErrorPage/ErrorPage";
+import Home from "./Routes/Home/Home";
+import SignUp from "./Routes/SignUp/SignUp";
+import LoginIn from "./Routes/LoginIn/LoginIn";
+import WishList from "./Routes/WishList/WishList";
+import CheckOut from "./Routes/CheckOut/CheckOut";
+import Contact from "./Routes/Contact/Contact";
+import Cart from "./Routes/Cart/Cart";
+import About from "./Routes/About/About";
+import CategotreyProducts from "./Routes/CategotreyProducts/CategotreyProducts";
+import Shop from "./Routes/Shop/Shop";
+import ProductDetails from "./Routes/ProductDetails/ProductDetails";
 
 const routes = createBrowserRouter([
   {
@@ -78,9 +78,11 @@ const routes = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AuthProvider>
-    <CartProvider>
-      <RouterProvider router={routes} />
-    </CartProvider>
-  </AuthProvider>
+  <RouterProvider router={routes}>
+    <AuthProvider>
+      <CartProvider>
+        {/* Place your application components here */}
+      </CartProvider>
+    </AuthProvider>
+  </RouterProvider>
 );

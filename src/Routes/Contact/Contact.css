@@ -1,0 +1,13 @@
+.contact {
+  margin: 180px 0 50px 0;
+}
+@media screen and (max-width: 767px) {
+  .contact {
+    margin: 160px 0 50px 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contact {
+    margin: 145px 0 50px 0;
+  }
+}

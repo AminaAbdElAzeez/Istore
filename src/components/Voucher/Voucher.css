@@ -1,0 +1,19 @@
+.voucher {
+  padding-top: 170px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 991px) {
+  .voucher {
+    padding-top: 150px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .voucher {
+    padding-top: 130px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .voucher {
+    padding-top: 120px;
+  }
+}

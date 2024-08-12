@@ -1,0 +1,163 @@
+.sign-up {
+  margin: 200px 0px 50px 0px;
+}
+.sign-up-form {
+  padding: 30px 20px;
+}
+.sign-up-title {
+  color: #000;
+  font-size: 33px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.sign-up-title:hover {
+  color: #db4444;
+}
+.sign-up-desc {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.sign-form > input,
+.sign-form > button {
+  display: block;
+  width: 100%;
+}
+.sign-form > input {
+  border-bottom: 1px solid #bfbfbf;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+  margin-bottom: 15px;
+  padding: 10px 5px;
+  color: #db4444;
+  transition: border-bottom 0.5s;
+  -webkit-transition: border-bottom 0.5s;
+  -moz-transition: border-bottom 0.5s;
+  -ms-transition: border-bottom 0.5s;
+  -o-transition: border-bottom 0.5s;
+}
+.sign-form > input:focus {
+  border-bottom: 1px solid #db4444;
+}
+.sign-form > input:last-of-type {
+  margin-bottom: 35px;
+}
+.sign-form > button {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 12px 0px;
+}
+.sign-up-account {
+  background-color: #db4444;
+  color: #fff;
+  border: 3px solid #db4444;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+  margin-bottom: 20px;
+}
+.sign-up-account:hover {
+  background-color: #fff;
+  color: #db4444;
+}
+.sign-up-submit {
+  margin-bottom: 20px;
+  border: 1px solid #bfbfbf;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #fff;
+  transition: border 0.5s;
+  -webkit-transition: border 0.5s;
+  -moz-transition: border 0.5s;
+  -ms-transition: border 0.5s;
+  -o-transition: border 0.5s;
+}
+.sign-up-submit > img {
+  margin-right: 7px;
+  width: 25px;
+  height: 25px;
+}
+.sign-up-submit:hover {
+  border: 1px solid #db4444;
+}
+.sign-up-have-account {
+  text-align: center;
+  color: #6b6a6a;
+  font-size: 14px;
+}
+.sign-up-have-account a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #424242;
+  margin-left: 5px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.sign-up-have-account a:hover {
+  color: #db4444;
+}
+@media screen and (max-width: 390px) {
+  .sign-up {
+    margin: 170px 0px 50px 0px;
+  }
+  .sign-up-title {
+    font-size: 28px;
+  }
+  .sign-up-desc {
+    font-size: 14px;
+  }
+  .sign-form > input {
+    font-size: 15px;
+  }
+  .sign-form > button {
+    padding: 9px 0;
+    font-size: 16px;
+  }
+  .sign-up-submit > img {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media screen and (max-width: 309px) {
+  .sign-up-title {
+    font-size: 20px;
+  }
+  .sign-up-desc {
+    font-size: 12px;
+  }
+  .sign-form > input {
+    font-size: 13px;
+  }
+  .sign-form > button {
+    font-size: 14px;
+  }
+  .sign-up-submit > img {
+    width: 17px;
+    height: 17px;
+  }
+  .sign-up-have-account {
+    font-size: 12px;
+  }
+  .sign-up-have-account > a {
+    font-size: 14px;
+  }
+}

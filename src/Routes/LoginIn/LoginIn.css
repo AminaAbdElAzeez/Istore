@@ -1,0 +1,92 @@
+.login-in-form {
+  padding: 130px 20px 20px 20px;
+}
+.login-form > input {
+  width: 100%;
+}
+.login-form > input {
+  border-bottom: 1px solid #bfbfbf;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+  margin-bottom: 15px;
+  padding: 10px 5px;
+  color: #db4444;
+  transition: border-bottom 0.5s;
+  -webkit-transition: border-bottom 0.5s;
+  -moz-transition: border-bottom 0.5s;
+  -ms-transition: border-bottom 0.5s;
+  -o-transition: border-bottom 0.5s;
+}
+.login-form > input:focus {
+  border-bottom: 1px solid #db4444;
+}
+.login-form > input:last-of-type {
+  margin-bottom: 35px;
+}
+.login-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login {
+  width: 140px;
+  height: 45px;
+  border: 3px solid #db4444;
+  background-color: #db4444;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+}
+.login:hover {
+  color: #db4444;
+  background-color: #fff;
+}
+.forget-password {
+  color: #db4444;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  transition: text-decoration 1s;
+  -webkit-transition: text-decoration 1s;
+  -moz-transition: text-decoration 1s;
+  -ms-transition: text-decoration 1s;
+  -o-transition: text-decoration 1s;
+}
+.forget-password:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 991px) {
+  .login-in-form {
+    padding: 30px 20px 20px 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .login-btn {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .login {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .login {
+    font-size: 16px;
+  }
+  .forget-password {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,73 @@
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+.error > h2 {
+  font-size: 70px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.error > h2:hover {
+  color: crimson;
+  animation: bounce-top 1.2s linear 0s infinite;
+  -webkit-animation: bounce-top 1.2s linear 0s infinite;
+}
+.error-desc {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.error-desc + a {
+  background-color: crimson;
+  border: 3px solid crimson;
+  padding: 15px 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+}
+.error-desc + a:hover {
+  color: crimson;
+  background-color: #fff;
+}
+@media screen and (max-width: 550px) {
+  .error > h2 {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .error > h2 {
+    font-size: 40px;
+  }
+  .error-desc {
+    font-size: 14px;
+  }
+  .error-desc + a {
+    border: 2px solid crimson;
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 310px) {
+  .error > h2 {
+    font-size: 30px;
+  }
+}

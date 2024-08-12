@@ -1,0 +1,221 @@
+.navbar {
+  box-shadow: 0px 20px 11px -20px #db4444;
+  padding: 15px 0 12px 0 !important;
+  background-color: #fff;
+}
+.navbar .container {
+  position: relative;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 28px !important;
+  padding-right: 145px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.navbar-brand:hover {
+  color: #db4444 !important;
+}
+.nav-item {
+  margin-right: 18px;
+  font-weight: 500;
+  font-size: 17px;
+  position: relative;
+}
+.nav-item > a {
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.nav-item:hover > a,
+.nav-item:first-child > a.active {
+  color: #db4444;
+}
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background-color: #db4444;
+  transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -ms-transition: width 0.5s;
+  -o-transition: width 0.5s;
+}
+.nav-item:hover::after,
+.nav-item:first-child::after {
+  width: 100%;
+}
+.form {
+  margin-right: 100px;
+}
+.search-input {
+  border: none;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  width: 210px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.icon-item {
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.icon-item:hover {
+  color: #db4444;
+}
+.icon {
+  border: none;
+  outline: none;
+  font-size: 25px;
+  margin-left: 18px;
+  background-color: #fff;
+}
+.icon2 {
+  color: #000;
+}
+.icon-box {
+  position: absolute;
+  top: 7px;
+  right: 25px;
+}
+.cart-notifications,
+.love-notifications {
+  position: absolute;
+  color: #fff;
+  background-color: red;
+  width: 23px;
+  height: 23px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.cart-notifications {
+  top: -8px;
+  right: -10px;
+}
+.love-notifications {
+  top: 17px;
+  right: 36px;
+}
+@media screen and (max-width: 1115px) {
+  .navbar-brand {
+    padding-right: 60px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .nav-item::after {
+    content: none;
+  }
+  .nav-item {
+    padding: 0px 15px;
+    margin: 0 0 15px 0;
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  .nav-item:first-child {
+    margin-top: 15px;
+  }
+  .nav-item:first-child,
+  .nav-item:hover {
+    background-color: #db4444;
+  }
+  .nav-item > a {
+    transition: margin-left 0.5s;
+    -webkit-transition: margin-left 0.5s;
+    -moz-transition: margin-left 0.5s;
+    -ms-transition: margin-left 0.5s;
+    -o-transition: margin-left 0.5s;
+  }
+  .nav-item > a:hover {
+    color: #fff;
+    margin-left: 10px;
+  }
+  .nav-item:first-child > a.active {
+    color: #fff;
+  }
+  .search-input {
+    width: 100%;
+    margin: 0 0px 15px 0;
+  }
+  .search-icon {
+    margin: 0 0px 15px 15px;
+  }
+  .icon-box {
+    right: 90px;
+  }
+  .form {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar-brand {
+    font-size: 25px !important;
+    padding-right: 0px;
+  }
+  .nav-item {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+  }
+  .search-input {
+    font-size: 13px;
+  }
+  .icon {
+    margin-left: 10px;
+  }
+  .icon-box {
+    right: 70px;
+  }
+  .navbar-toggler {
+    width: 40px;
+    padding: 5px !important;
+  }
+  .navbar-toggler-icon {
+    width: 25px !important;
+  }
+}
+@media screen and (max-width: 270px) {
+  .icon {
+    font-size: 22px;
+    margin-left: 7px;
+  }
+  .icon-box {
+    right: 58px;
+  }
+  .navbar-brand {
+    font-size: 25px !important;
+  }
+  .search-input {
+    font-size: 12px;
+    padding-right: 0;
+  }
+}

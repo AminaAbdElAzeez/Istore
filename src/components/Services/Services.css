@@ -1,0 +1,85 @@
+.services {
+  margin: 10px 0;
+  padding: 40px 0 50px 0;
+}
+.service-item {
+  text-align: center;
+}
+.services-icons {
+  width: 90px;
+  height: 90px;
+  background-color: #c1c0c1;
+  position: relative;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  -webkit-transition: background-color 0.5s, box-shadow 0.5s;
+  -moz-transition: background-color 0.5s, box-shadow 0.5s;
+  -ms-transition: background-color 0.5s, box-shadow 0.5s;
+  -o-transition: background-color 0.5s, box-shadow 0.5s;
+}
+.services-icons:hover {
+  background-color: #df5f5f;
+  box-shadow: 0px 0px 50px 10px #db4444;
+}
+.service-icon {
+  font-size: 28px;
+  background-color: #000;
+  color: #fff;
+  padding: 18px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.service-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.service-title:hover {
+  color: #db4444;
+}
+.service-desc {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 991px) {
+  .services-icons {
+    width: 70px;
+    height: 70px;
+  }
+  .service-icon {
+    font-size: 25px;
+    padding: 10px;
+  }
+  .service-title {
+    font-size: 16px;
+  }
+  .service-desc {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .service-item {
+    margin-bottom: 30px;
+  }
+}

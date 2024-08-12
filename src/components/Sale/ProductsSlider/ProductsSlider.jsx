@@ -6,8 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
-import CartContext from "../../../Context/CartContext";
 import Modal from "../../Modal/Modal";
+import CartContext from "../../../Context/CartProvider";
 
 function ProductsSlider() {
   const [products, setProducts] = useState([]);

@@ -39,11 +39,9 @@ const routes = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={routes}>
-    <AuthProvider>
-      <CartProvider>
-        {/* Place your application components here */}
-      </CartProvider>
-    </AuthProvider>
-  </RouterProvider>
+  <AuthProvider>
+    <CartProvider>
+      <RouterProvider router={routes} />
+    </CartProvider>
+  </AuthProvider>
 );

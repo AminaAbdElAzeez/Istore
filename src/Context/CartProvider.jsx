@@ -1,15 +1,15 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../AuthContext/AuthContext";
+import { createContext, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import CartContext from "./CartContext";
+import { AuthContext } from "../AuthContext/AuthContext";
 
-const CartProvider = ({ children }) => {
+const CartContext = createContext();
+
+export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [wishItems, setWishItems] = useState([]);
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate(); // استخدام useNavigate بدلاً من useHistory
+  const navigate = useNavigate();
 
-  // Handle Add To Cart
   const addToCart = (item) => {
     if (!user) {
       navigate("/signup");
@@ -27,7 +27,6 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  // Handle Add To Wishlist
   const addToWishList = (item) => {
     if (!user) {
       navigate("/signup");
@@ -45,16 +44,12 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  // Handle Remove From Cart
   const removeFromCart = (id) => {
-    const cart = cartItems.filter((c) => c.id !== id);
-    setCartItems(cart);
+    setCartItems(cartItems.filter((c) => c.id !== id));
   };
 
-  // Handle Remove From Wishlist
   const removeFromWishlist = (id) => {
-    const wish = wishItems.filter((c) => c.id !== id);
-    setWishItems(wish);
+    setWishItems(wishItems.filter((c) => c.id !== id));
   };
 
   return (
@@ -75,4 +70,4 @@ const CartProvider = ({ children }) => {
   );
 };
 
-export default CartProvider;
+export default CartContext;

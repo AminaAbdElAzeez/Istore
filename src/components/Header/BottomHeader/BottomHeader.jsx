@@ -6,9 +6,9 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../AuthContext/AuthContext";
 import { useContext } from "react";
-import CartContext from "../../../Context/CartContext";
+import CartContext from "../../../Context/CartProvider";
+import { AuthContext } from "../../../AuthContext/AuthContext";
 
 function BottomHeader() {
   const { cartItemsLength } = useContext(CartContext);

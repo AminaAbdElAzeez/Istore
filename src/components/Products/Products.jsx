@@ -5,7 +5,7 @@ import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
-import CartContext from "../../Context/CartContext";
+import CartContext from "../../Context/CartProvider";
 
 function Products({ products }) {
   const { addToCart } = useContext(CartContext);

@@ -1,8 +1,7 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Use BrowserRouter as Router
 import { AuthProvider } from "./AuthContext/AuthContext";
 import { CartProvider } from "./Context/CartProvider";
-import Root from "./Routes/Root/Root";
 import ErrorPage from "./Routes/ErrorPage/ErrorPage";
 import Home from "./Routes/Home/Home";
 import SignUp from "./Routes/SignUp/SignUp";
@@ -15,33 +14,30 @@ import About from "./Routes/About/About";
 import CategotreyProducts from "./Routes/CategotreyProducts/CategotreyProducts";
 import Shop from "./Routes/Shop/Shop";
 import ProductDetails from "./Routes/ProductDetails/ProductDetails";
-
-const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: ":categorey", element: <CategotreyProducts /> },
-      { path: "signup", element: <SignUp /> },
-      { path: "login", element: <LoginIn /> },
-      { path: "wishlist", element: <WishList /> },
-      { path: "cart", element: <Cart /> },
-      { path: "checkout", element: <CheckOut /> },
-      { path: "about", element: <About /> },
-      { path: "contact", element: <Contact /> },
-      { path: "shop", element: <Shop /> },
-      { path: "/products/:id", element: <ProductDetails /> },
-      { path: "/error", element: <ErrorPage /> },
-    ],
-  },
-]);
+import Root from "./Routes/Root/Root";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AuthProvider>
-    <CartProvider>
-      <RouterProvider router={routes} />
-    </CartProvider>
-  </AuthProvider>
+  <Router>
+    <AuthProvider>
+      <CartProvider>
+        <Routes>
+          <Route path="/" element={<Root />}>
+            <Route index element={<Home />} />
+            <Route path="home" element={<Home />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<LoginIn />} />
+            <Route path="wishlist" element={<WishList />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="checkout" element={<CheckOut />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="products/:id" element={<ProductDetails />} />
+            <Route path=":categorey" element={<CategotreyProducts />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Route>
+        </Routes>
+      </CartProvider>
+    </AuthProvider>
+  </Router>
 );

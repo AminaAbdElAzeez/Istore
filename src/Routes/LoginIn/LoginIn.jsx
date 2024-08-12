@@ -1,27 +1,40 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom"; // لإعادة التوجيه بعد تسجيل الدخول
+import { useNavigate } from "react-router-dom";
 import LeftForm from "../../components/LeftForm/LeftForm";
 import "./LoginIn.css";
-import { AuthContext } from "../../AuthContext//AuthContext";
+import { AuthContext } from "../../AuthContext/AuthContext";
 
 function LoginIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useContext(AuthContext); // جلب دالة login من AuthContext
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // هنا يمكن إضافة منطق التحقق من صحة بيانات تسجيل الدخول
-    const userData = {
-      email: email,
-      password: password,
-      // يمكن إضافة المزيد من الحقول مثل الاسم الكامل أو الصورة الشخصية
-    };
+    // تحقق من صحة بيانات تسجيل الدخول
+    if (!email || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
 
-    login(userData); // تسجيل الدخول
-    navigate("/"); // إعادة التوجيه للصفحة الرئيسية بعد تسجيل الدخول
+    try {
+      const userData = {
+        email: email,
+        password: password,
+      };
+
+      await login(userData); // تأكد من أن دالة login هي دالة غير متزامنة إذا كانت تقوم بإجراء عمليات غير متزامنة
+      navigate("/"); // إعادة التوجيه للصفحة الرئيسية بعد تسجيل الدخول
+    } catch (error) {
+      console.error("Login failed:", error);
+      alert("Failed to login. Please try again.");
+    }
+
+    // إعادة تعيين الحقول بعد تسجيل الدخول بنجاح (اختياري)
+    setEmail("");
+    setPassword("");
   };
 
   return (

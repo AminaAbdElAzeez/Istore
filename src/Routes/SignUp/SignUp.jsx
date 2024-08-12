@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom"; // لإعادة التوجيه بعد إنشاء الحساب
+import { useNavigate } from "react-router-dom";
 import LeftForm from "../../components/LeftForm/LeftForm";
 import image from "../../assets/Icon-Google.png";
 import "./SignUp.css";
@@ -9,11 +9,17 @@ function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useContext(AuthContext); // جلب دالة login من AuthContext
+  const { signUp } = useContext(AuthContext); // استخدام دالة signUp من AuthContext بدلاً من login
   const navigate = useNavigate();
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
+
+    // تحقق من صحة بيانات المستخدم
+    if (!name || !email || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
 
     // بيانات المستخدم الجديد
     const newUser = {
@@ -22,11 +28,18 @@ function SignUp() {
       password: password,
     };
 
-    // تسجيل المستخدم وحفظ بياناته في localStorage
-    login(newUser);
+    try {
+      await signUp(newUser); // تسجيل المستخدم
+      navigate("/"); // إعادة التوجيه بعد التسجيل
+    } catch (error) {
+      console.error("Sign up failed:", error);
+      alert("Failed to sign up. Please try again.");
+    }
 
-    // إعادة التوجيه إلى الصفحة الرئيسية أو صفحة تسجيل الدخول
-    navigate("/");
+    // إعادة تعيين الحقول بعد التسجيل بنجاح (اختياري)
+    setName("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -50,7 +63,7 @@ function SignUp() {
                 />
                 <input
                   type="email"
-                  placeholder="Email or phone Number..."
+                  placeholder="Email..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -70,7 +83,7 @@ function SignUp() {
                   Sign up with Google
                 </button>
                 <p className="sign-up-have-account">
-                  Already have account? <a href="/login">Log in</a>
+                  Already have an account? <a href="/login">Log in</a>
                 </p>
               </form>
             </div>

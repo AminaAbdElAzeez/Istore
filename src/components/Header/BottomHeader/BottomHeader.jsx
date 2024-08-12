@@ -7,8 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthContext/AuthContext";
-import { CartContext } from "../../../Context/CartProvider";
 import { useContext } from "react";
+import CartContext from "../../../Context/CartContext";
 
 function BottomHeader() {
   const { cartItemsLength } = useContext(CartContext);

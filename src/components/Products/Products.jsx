@@ -3,9 +3,9 @@ import Rating from "../Rating/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
-import CartContext from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
+import CartContext from "../../Context/CartContext";
 
 function Products({ products }) {
   const { addToCart } = useContext(CartContext);

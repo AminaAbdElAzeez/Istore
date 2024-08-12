@@ -4,7 +4,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./AuthContext/AuthContext";
-import { CartProvider } from "./Context/CartProvider";
 import Root from "./Routes/Root/Root";
 import ErrorPage from "./Routes/ErrorPage/ErrorPage";
 import Home from "./Routes/Home/Home";
@@ -18,6 +17,7 @@ import About from "./Routes/About/About";
 import CategotreyProducts from "./Routes/CategotreyProducts/CategotreyProducts";
 import Shop from "./Routes/Shop/Shop";
 import ProductDetails from "./Routes/ProductDetails/ProductDetails";
+import CartProvider from "./Context/CartProvider.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -25,64 +25,26 @@ const routes = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: ":categorey",
-        element: <CategotreyProducts />,
-      },
-      {
-        path: "signup",
-        element: <SignUp />,
-      },
-      {
-        path: "login",
-        element: <LoginIn />,
-      },
-      {
-        path: "wishlist",
-        element: <WishList />,
-      },
-      {
-        path: "cart",
-        element: <Cart />,
-      },
-      {
-        path: "checkout",
-        element: <CheckOut />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "shop",
-        element: <Shop />,
-      },
-      {
-        path: "/products/:id",
-        element: <ProductDetails />,
-      },
-      {
-        path: "/error",
-        element: <ErrorPage />,
-      },
+      { index: true, element: <Home /> },
+      { path: ":categorey", element: <CategotreyProducts /> },
+      { path: "signup", element: <SignUp /> },
+      { path: "login", element: <LoginIn /> },
+      { path: "wishlist", element: <WishList /> },
+      { path: "cart", element: <Cart /> },
+      { path: "checkout", element: <CheckOut /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "shop", element: <Shop /> },
+      { path: "/products/:id", element: <ProductDetails /> },
+      { path: "/error", element: <ErrorPage /> },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={routes}>
-    <AuthProvider>
-      <CartProvider>
-        {/* Place your application components here */}
-      </CartProvider>
-    </AuthProvider>
-  </RouterProvider>
+  <AuthProvider>
+    <CartProvider>
+      <RouterProvider router={routes} />
+    </CartProvider>
+  </AuthProvider>
 );

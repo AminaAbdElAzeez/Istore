@@ -9,7 +9,7 @@
 .navbar-brand {
   font-weight: 700;
   font-size: 28px !important;
-  padding-right: 145px;
+  padding-right: 125px;
   transition: color 0.5s;
   -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
@@ -20,48 +20,29 @@
   color: #db4444 !important;
 }
 .nav-item {
-  margin-right: 18px;
-  font-weight: 500;
-  font-size: 17px;
+  margin-right: 12px;
+  font-size: 18px;
   position: relative;
 }
 .nav-item > a {
-  transition: color 0.5s;
-  -webkit-transition: color 0.5s;
-  -moz-transition: color 0.5s;
-  -ms-transition: color 0.5s;
-  -o-transition: color 0.5s;
+  transition: font-weight 0.5s, color 0.5s;
+  -webkit-transition: font-weight 0.5s, color 0.5s;
+  -moz-transition: font-weight 0.5s, color 0.5s;
+  -ms-transition: font-weight 0.5s, color 0.5s;
+  -o-transition: font-weight 0.5s, color 0.5s;
 }
-.nav-item:hover > a,
-.nav-item:first-child > a.active {
-  color: #db4444;
-}
-.nav-item::after {
-  content: "";
-  position: absolute;
-  bottom: -18px;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background-color: #db4444;
-  transition: width 0.5s;
-  -webkit-transition: width 0.5s;
-  -moz-transition: width 0.5s;
-  -ms-transition: width 0.5s;
-  -o-transition: width 0.5s;
-}
-.nav-item:hover::after,
-.nav-item:first-child::after {
-  width: 100%;
+.nav-item > a:hover {
+  color: #db4444 !important;
 }
 .form {
-  margin-right: 100px;
+  margin-right: 225px;
+  position: relative;
 }
 .search-input {
   border: none;
   background-color: #f5f5f5;
-  font-size: 14px;
-  width: 210px;
+  font-size: 10px;
+  width: 160px;
   padding: 10px 15px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -70,37 +51,103 @@
   -o-border-radius: 10px;
 }
 .icon-item {
+  font-size: 22px;
+  margin-left: 10px;
+  padding-top: 5px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  cursor: pointer;
+}
+.icon-item:hover {
+  color: #db4444;
+}
+.header-icons-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: absolute;
+  right: -203px;
+  top: -3px;
+}
+.header-icons-list li a {
+  display: block;
+  font-size: 22px;
+  color: #000;
+  margin-left: 18px;
   transition: color 0.5s;
   -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -ms-transition: color 0.5s;
   -o-transition: color 0.5s;
 }
-.icon-item:hover {
+.header-icons-list li a:hover {
   color: #db4444;
 }
-.icon {
-  border: none;
-  outline: none;
-  font-size: 25px;
-  margin-left: 18px;
+.header-icons-list li:last-of-type .last-li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header-icons-list li:last-of-type .last-li button {
+  padding: 5px;
+  border: 2px solid #db4444;
+  background-color: #db4444;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 15px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+}
+.header-icons-list li:last-of-type .last-li button:hover,
+.header-icons-list li:last-of-type .login-header:hover {
   background-color: #fff;
+  color: #db4444;
 }
-.icon2 {
-  color: #000;
+.header-icons-list li:last-of-type .login-header {
+  display: block;
+  font-size: 16px;
+  color: #fff;
+  padding: 5px 7px;
+  border: 2px solid #db4444;
+  background-color: #db4444;
+  font-weight: 600;
+  margin: 0 15px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
 }
-.icon-box {
-  position: absolute;
-  top: 7px;
-  right: 25px;
+.wishlist-icon-header,
+.cart-icon-header {
+  position: relative;
 }
 .cart-notifications,
 .love-notifications {
   position: absolute;
   color: #fff;
   background-color: red;
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   font-size: 12px;
   display: flex;
   justify-content: center;
@@ -113,20 +160,30 @@
 }
 .cart-notifications {
   top: -8px;
-  right: -10px;
+  right: -11px;
 }
 .love-notifications {
-  top: 17px;
-  right: 36px;
+  top: 16px;
+  right: -10px;
 }
 @media screen and (max-width: 1115px) {
   .navbar-brand {
-    padding-right: 60px;
+    padding-right: 40px;
+  }
+  .form {
+    margin-right: 210px;
   }
 }
 @media screen and (max-width: 991px) {
   .nav-item::after {
     content: none;
+  }
+  .form {
+    margin-right: 0px;
+  }
+  .header-icons-list {
+    top: 60px;
+    left: 0;
   }
   .nav-item {
     padding: 0px 15px;
@@ -145,10 +202,6 @@
   .nav-item:first-child {
     margin-top: 15px;
   }
-  .nav-item:first-child,
-  .nav-item:hover {
-    background-color: #db4444;
-  }
   .nav-item > a {
     transition: margin-left 0.5s;
     -webkit-transition: margin-left 0.5s;
@@ -157,24 +210,14 @@
     -o-transition: margin-left 0.5s;
   }
   .nav-item > a:hover {
-    color: #fff;
     margin-left: 10px;
-  }
-  .nav-item:first-child > a.active {
-    color: #fff;
   }
   .search-input {
     width: 100%;
-    margin: 0 0px 15px 0;
+    margin: 0 0px 80px 0;
   }
   .search-icon {
     margin: 0 0px 15px 15px;
-  }
-  .icon-box {
-    right: 90px;
-  }
-  .form {
-    margin-right: 0;
   }
 }
 @media screen and (max-width: 400px) {
@@ -184,13 +227,6 @@
   }
   .nav-item {
     margin: 0 0 10px 0;
-    font-size: 15px;
-  }
-  .search-input {
-    font-size: 13px;
-  }
-  .icon {
-    margin-left: 10px;
   }
   .icon-box {
     right: 70px;
@@ -204,13 +240,6 @@
   }
 }
 @media screen and (max-width: 270px) {
-  .icon {
-    font-size: 22px;
-    margin-left: 7px;
-  }
-  .icon-box {
-    right: 58px;
-  }
   .navbar-brand {
     font-size: 25px !important;
   }

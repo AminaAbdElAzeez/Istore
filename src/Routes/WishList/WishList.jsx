@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import CartContext from "../../Context/CartContext";
 import RemoveProducts from "../../components/RemoveProducts/RemoveProducts";
 import TopHead from "../../components/TopHead/TopHead";
 import ProductsSlider from "../../components/Sale/ProductsSlider/ProductsSlider";
+import CartContext from "../../Context/CartProvider";
 
 const WishList = () => {
   const [products, setProducts] = useState([]);

@@ -1,0 +1,36 @@
+.left-account-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.left-account-list {
+  padding: 0 0 0 20px;
+  margin-bottom: 20px;
+}
+.left-account-title:hover {
+  color: crimson;
+}
+.left-account-list > li {
+  cursor: pointer;
+  font-size: 15px;
+  color: #a0a0a0;
+  margin-bottom: 7px;
+  transition: margin-left 0.5s, color 0.5s;
+  -webkit-transition: margin-left 0.5s, color 0.5s;
+  -moz-transition: margin-left 0.5s, color 0.5s;
+  -ms-transition: margin-left 0.5s, color 0.5s;
+  -o-transition: margin-left 0.5s, color 0.5s;
+}
+.left-account-list > li:hover {
+  color: crimson;
+  margin-left: 10px;
+}
+.left-account-list:first-of-type > li:first-child {
+  color: crimson;
+  font-weight: 500;
+}

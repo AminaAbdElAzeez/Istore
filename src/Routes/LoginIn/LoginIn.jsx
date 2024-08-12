@@ -1,41 +1,46 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import LeftForm from "../../components/LeftForm/LeftForm";
 import "./LoginIn.css";
 import { AuthContext } from "../../AuthContext/AuthContext";
 
 function LoginIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    // تحقق من صحة بيانات تسجيل الدخول
-    if (!email || !password) {
-      alert("Please fill in all fields.");
-      return;
-    }
-
-    try {
-      const userData = {
-        email: email,
-        password: password,
-      };
-
-      await login(userData); // تأكد من أن دالة login هي دالة غير متزامنة إذا كانت تقوم بإجراء عمليات غير متزامنة
-      navigate("/"); // إعادة التوجيه للصفحة الرئيسية بعد تسجيل الدخول
-    } catch (error) {
-      console.error("Login failed:", error);
-      alert("Failed to login. Please try again.");
-    }
-
-    // إعادة تعيين الحقول بعد تسجيل الدخول بنجاح (اختياري)
-    setEmail("");
-    setPassword("");
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  const handleLogin = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setError("");
+
+      if (!formData.email || !formData.password) {
+        setError("Please fill in all fields.");
+        return;
+      }
+
+      setIsLoading(true);
+      try {
+        await login(formData);
+        navigate("/");
+      } catch (error) {
+        console.error("Login failed:", error);
+        setError("Failed to login. Please try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [formData, login, navigate]
+  );
 
   return (
     <section className="sign-up">
@@ -52,20 +57,23 @@ function LoginIn() {
                 <input
                   type="email"
                   placeholder="Email or phone Number..."
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
                 <input
                   type="password"
                   placeholder="Password..."
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
                   required
                 />
+                {error && <p className="error-message">{error}</p>}
                 <div className="login-btn">
-                  <button type="submit" className="login">
-                    Login in
+                  <button type="submit" className="login" disabled={isLoading}>
+                    {isLoading ? "Logging in..." : "Login in"}
                   </button>
                   <a className="forget-password" href="/#">
                     Forget Password?

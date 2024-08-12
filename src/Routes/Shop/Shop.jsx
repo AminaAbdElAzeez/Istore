@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Products from "../../components/Products/Products";
 import "./Shop.css";
+import Spinner from "../../components/Spinner/Spinner";
 
 function Shop() {
   const [products, setProducts] = useState([]);
@@ -31,14 +32,15 @@ function Shop() {
               type="search"
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search in Products..."
+              className="shop-input"
             />
           </div>
         </div>
         <div className="col-lg-12">
           {loading ? (
-            console.log("spinner")
+            <Spinner />
           ) : search && filteredProducts.length === 0 ? (
-            console.log("nodata")
+            <p className="no-data">No Data 🤷‍♂️😳.</p>
           ) : (
             <Products products={filteredProducts} />
           )}

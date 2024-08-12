@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../../Modal/Modal";
 import CartContext from "../../../Context/CartProvider";
+import { Link } from "react-router-dom";
 
 function ProductsSlider() {
   const [products, setProducts] = useState([]);
@@ -113,9 +114,9 @@ function ProductsSlider() {
           );
         })}
       </Slider>
-      <a href="/shop" className="view-all">
+      <Link to="shop" className="view-all">
         View All Products
-      </a>
+      </Link>
       <hr />
       {openModal && <Modal cartData={cartData} setOpenModal={setOpenModal} />}
     </div>

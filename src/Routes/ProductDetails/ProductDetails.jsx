@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetails.css";
 import Rating from "../../components/Rating/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faRotate, faTruck } from "@fortawesome/free-solid-svg-icons";
 import TopHead from "../../components/TopHead/TopHead";
 import ProductsSlider from "../../components/Sale/ProductsSlider/ProductsSlider";
-import CartContext from "../../Context/CartContext";
+import CartContext from "../../Context/CartProvider";
 
 function ProductDetails() {
   const [products, setProducts] = useState([]);
@@ -14,6 +14,7 @@ function ProductDetails() {
   const { id } = useParams();
   const { cartItems, addToCart } = useContext(CartContext);
   const { addToWishList } = useContext(CartContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -40,6 +41,10 @@ function ProductDetails() {
       const quantity = parseInt(itemInCart.quantity) - 1;
       addToCart({ ...product, quantity });
     }
+  };
+
+  const handleBuyNow = () => {
+    navigate("/checkout"); // Navigate to the Checkout page
   };
 
   return (
@@ -118,9 +123,9 @@ function ProductDetails() {
                         -
                       </button>
                     </div>
-                    <Link to="/cart" className="product-buy">
+                    <button onClick={handleBuyNow} className="product-buy">
                       Buy Now
-                    </Link>
+                    </button>
                     <div
                       className="product-details-love-icon"
                       onClick={() => addToWishList({ ...product, quantity: 1 })}

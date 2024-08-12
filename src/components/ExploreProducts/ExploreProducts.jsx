@@ -10,7 +10,6 @@ function ExploreProducts() {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
-        console.log("Number of products:", data.products.length);
       });
   }, []);
   const filteredProducts = products.slice(5, 13);

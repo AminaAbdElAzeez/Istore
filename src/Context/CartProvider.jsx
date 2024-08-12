@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
 
@@ -10,11 +10,35 @@ export const CartProvider = ({ children }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user) {
+      // استرجاع بيانات cart و wishlist عند تسجيل الدخول
+      const storedCartItems =
+        JSON.parse(localStorage.getItem(`cart_${user.email}`)) || [];
+      const storedWishItems =
+        JSON.parse(localStorage.getItem(`wishlist_${user.email}`)) || [];
+      setCartItems(storedCartItems);
+      setWishItems(storedWishItems);
+    } else {
+      // مسح بيانات cart و wishlist إذا لم يكن هناك مستخدم
+      setCartItems([]);
+      setWishItems([]);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (user) {
+      // تخزين بيانات cart و wishlist عند التحديث
+      localStorage.setItem(`cart_${user.email}`, JSON.stringify(cartItems));
+      localStorage.setItem(`wishlist_${user.email}`, JSON.stringify(wishItems));
+    }
+  }, [cartItems, wishItems, user]);
+
   const addToCart = (item) => {
     if (!user) {
       navigate("/signup");
     } else {
-      const isExist = cartItems.find((cart) => cart.id === item.id);
+      const isExist = cartItems.find((cart) => cart.id === +item.id);
       if (isExist) {
         setCartItems(
           cartItems.map((cartItem) =>
@@ -52,6 +76,14 @@ export const CartProvider = ({ children }) => {
     setWishItems(wishItems.filter((c) => c.id !== id));
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
+  const clearWishlist = () => {
+    setWishItems([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -61,6 +93,8 @@ export const CartProvider = ({ children }) => {
         addToWishList,
         wishItems,
         removeFromWishlist,
+        clearCart,
+        clearWishlist,
         cartItemsLength: cartItems.length,
         wishListItemsLength: wishItems.length,
       }}

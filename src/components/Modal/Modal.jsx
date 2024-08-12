@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import CartContext from "../../Context/CartContext";
-import "./Modal.css";
 import { Link } from "react-router-dom";
 import Rating from "../Rating/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faClose } from "@fortawesome/free-solid-svg-icons";
+import CartContext from "../../Context/CartProvider";
+import "./Modal.css";
 
 const Modal = ({ cartData, setOpenModal }) => {
   const [qty, setQty] = useState(1);
@@ -12,7 +12,7 @@ const Modal = ({ cartData, setOpenModal }) => {
   const { title, images, price, rating, category, stock, id } = cartData;
   return (
     <div className="modal-container" onClick={() => setOpenModal(false)}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-contentt" onClick={(e) => e.stopPropagation()}>
         <FontAwesomeIcon
           icon={faClose}
           onClick={() => setOpenModal(false)}

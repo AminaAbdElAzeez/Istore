@@ -11,7 +11,6 @@ function BestProducts() {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
-        console.log("Number of products:", data.products.length);
       });
   }, []);
   const filteredProducts = products.filter((product) => product.rating >= 4.7);

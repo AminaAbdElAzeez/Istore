@@ -1,0 +1,213 @@
+.Billing {
+  margin: 170px 0 50px 0;
+}
+.bittling-title {
+  font-size: 25px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.bittling-title:hover {
+  color: crimson;
+}
+.Billing label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.Billing label:hover {
+  color: crimson;
+}
+.Billing input {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: #f5f5f5;
+  padding: 7px 15px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.checkbox-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.checkbox-input input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.check-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.check-info > img {
+  width: 100px;
+  height: 100px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.check-product {
+  margin-bottom: 50px;
+  padding: 0 20px 0 40px;
+}
+.check-product-title {
+  font-size: 18px;
+}
+.check-product-title + p {
+  color: red;
+  font-weight: 500;
+  font-size: 18px;
+}
+.check-box {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: crimson;
+}
+.check-box > b {
+  color: #000;
+}
+.check-total {
+  margin-bottom: 30px;
+}
+.check-info-input-img {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ckeck-radio {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.check-info-input {
+  width: 50%;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.check-info-input input {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0 !important;
+  margin: 0 10px 7px 0 !important;
+}
+.check-info-input label {
+  display: inline-block;
+  font-weight: 500;
+}
+.check-info-input + img {
+  width: 45%;
+  margin-bottom: 20px;
+}
+.check-btn > input {
+  width: 45%;
+  display: inline-block;
+  height: 40px;
+}
+.check-btn > input:first-child {
+  border: 2px solid crimson;
+  background-color: #fff;
+  font-size: 15px;
+  height: 40px;
+  margin-right: 10px;
+}
+.check-btn > input:last-of-type {
+  border: 2px solid crimson;
+  background-color: crimson;
+  color: #fff;
+  font-size: 15px;
+  height: 40px;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+}
+.check-btn > input:last-of-type:hover {
+  background-color: #fff;
+  color: crimson;
+}
+.check-btn > button {
+  width: 100%;
+  background-color: crimson;
+  color: #fff;
+  height: 45px;
+  border: 2px solid crimson;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-weight: 500;
+}
+.check-btn > button:hover {
+  background-color: #fff;
+  color: crimson;
+}
+@media screen and (max-width: 991px) {
+  .checkbox-input input {
+    margin-bottom: 60px;
+  }
+  .check-product {
+    padding: 0 0px 0 0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .check-info {
+    flex-direction: column;
+  }
+  .check-info > img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  .check-product-title {
+    font-size: 16px;
+  }
+  .check-info-input-img {
+    flex-direction: column;
+  }
+  .check-info-input {
+    width: 100%;
+  }
+  .check-info-input + img {
+    width: 100%;
+  }
+  .check-btn > input {
+    width: 100%;
+  }
+}

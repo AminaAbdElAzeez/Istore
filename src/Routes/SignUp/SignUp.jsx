@@ -1,45 +1,47 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LeftForm from "../../components/LeftForm/LeftForm";
 import image from "../../assets/Icon-Google.png";
 import "./SignUp.css";
 import { AuthContext } from "../../AuthContext/AuthContext";
 
 function SignUp() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { signUp } = useContext(AuthContext); // استخدام دالة signUp من AuthContext بدلاً من login
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signUp } = useContext(AuthContext);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    setError("");
 
-    // تحقق من صحة بيانات المستخدم
-    if (!name || !email || !password) {
-      alert("Please fill in all fields.");
+    if (!formData.name || !formData.email || !formData.password) {
+      setError("Please fill in all fields.");
       return;
     }
 
-    // بيانات المستخدم الجديد
-    const newUser = {
-      name: name,
-      email: email,
-      password: password,
-    };
-
+    setIsLoading(true);
     try {
-      await signUp(newUser); // تسجيل المستخدم
-      navigate("/"); // إعادة التوجيه بعد التسجيل
+      await signUp(formData);
+      navigate("/login"); // توجيه المستخدم إلى صفحة تسجيل الدخول بعد التسجيل
     } catch (error) {
       console.error("Sign up failed:", error);
-      alert("Failed to sign up. Please try again.");
+      setError("Failed to sign up. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
-
-    // إعادة تعيين الحقول بعد التسجيل بنجاح (اختياري)
-    setName("");
-    setEmail("");
-    setPassword("");
   };
 
   return (
@@ -57,33 +59,41 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Name..."
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                 />
                 <input
                   type="email"
                   placeholder="Email..."
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
                 <input
                   type="password"
                   placeholder="Password..."
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
                   required
                 />
-                <button type="submit" className="sign-up-account">
-                  Create Account
+                {error && <p className="error-message">{error}</p>}
+                <button
+                  type="submit"
+                  className="sign-up-submit"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Signing up..." : "Create Account"}
                 </button>
-                <button type="button" className="sign-up-submit">
+                <button type="button" className="sign-up-google">
                   <img src={image} alt="google" />
                   Sign up with Google
                 </button>
                 <p className="sign-up-have-account">
-                  Already have an account? <a href="/login">Log in</a>
+                  Already have an account? <Link to="/login">Log in</Link>
                 </p>
               </form>
             </div>

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Products from "../../components/Products/Products";
 import "./CategoryProducts.css";
 import TopHead from "../../components/TopHead/TopHead";
+import Spinner from "../../components/Spinner/Spinner";
 
 function CategoryProducts() {
   const [products, setProducts] = useState([]);
@@ -38,7 +39,7 @@ function CategoryProducts() {
             {filteredProducts.length > 0 ? (
               <Products products={filteredProducts} />
             ) : (
-              <p>No products found in this category.</p>
+              <Spinner />
             )}
           </div>
         </div>

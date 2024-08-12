@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
 }
-.modal-content {
+.modal-contentt {
   width: 80%;
   height: auto;
   padding: 60px 0;
@@ -191,7 +191,7 @@
   .modal-content-info-price {
     font-size: 18px;
   }
-  .modal-content {
+  .modal-contentt {
     padding: 60px 0 50px 0;
   }
   .modal-add-to-cart-input {

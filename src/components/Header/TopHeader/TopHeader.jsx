@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./TopHeader.css";
 
 function TopHeader() {
@@ -9,7 +10,7 @@ function TopHeader() {
             <p className="top-header-desc">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!
-              <a href="/#">ShopNow</a>
+              <Link to="shop">ShopNow</Link>
             </p>
             <select className="top-lang">
               <option value="en">english</option>

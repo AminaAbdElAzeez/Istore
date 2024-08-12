@@ -1,0 +1,129 @@
+.right-account {
+  box-shadow: 0px 0px 8px 4px #e4e3e3;
+  padding: 40px 50px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.right-account-form-title {
+  font-size: 22px;
+  color: crimson;
+  font-weight: 600;
+  margin-bottom: 22px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.right-account-form-title:hover {
+  color: teal;
+}
+.right-account label {
+  display: block;
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.right-account label:hover {
+  color: crimson;
+}
+.right-account input {
+  display: block;
+  color: crimson;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+.right-account .row:last-of-type + input {
+  width: 48%;
+  height: auto;
+  background-color: #fff;
+  color: crimson;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid crimson;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+  display: inline-block;
+  margin-right: 10px;
+}
+.right-account .row:last-of-type + input:hover {
+  background-color: crimson;
+  color: #fff;
+}
+.right-account .row:last-of-type + input + input {
+  display: inline-block;
+  width: 48%;
+  height: auto;
+  background-color: crimson;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid crimson;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+  -moz-transition: background-color 0.5s, color 0.5s;
+  -ms-transition: background-color 0.5s, color 0.5s;
+  -o-transition: background-color 0.5s, color 0.5s;
+}
+.right-account .row:last-of-type + input + input:hover {
+  background-color: #fff;
+  color: crimson;
+}
+@media screen and (max-width: 991px) {
+  .right-account {
+    margin-top: 30px;
+  }
+  .right-account .row:last-of-type + input,
+  .right-account .row:last-of-type + input + input {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .right-account {
+    padding: 40px 22px;
+  }
+  .right-account label {
+    font-size: 17px;
+  }
+  .right-account input {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
+}
+.error-accout {
+  margin: 10px 0;
+  font-size: 14px;
+  color: red;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0;
+}
+@media screen and (max-width: 300px) {
+  .right-account input {
+    padding: 10px 10px;
+    font-size: 10px;
+  }
+}

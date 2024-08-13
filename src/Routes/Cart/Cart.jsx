@@ -2,6 +2,7 @@ import "./Cart.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import CartContext from "../../Context/CartProvider";
+import PagenationRoutes from "../../components/PagenationRoutes/PagenationRoutes";
 
 const Cart = () => {
   const { cartItems, removeFromCart, addToCart } = useContext(CartContext);
@@ -12,6 +13,11 @@ const Cart = () => {
   return (
     <section className="cart">
       <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <PagenationRoutes route="Home" title="Cart" />
+          </div>
+        </div>
         <div className="row">
           {cartItems.length === 0 ? (
             <div className="col-lg-12">
@@ -24,6 +30,7 @@ const Cart = () => {
             </div>
           ) : (
             <>
+              {}
               <div className="col-lg-8 col-md-12 col-sm-12">
                 {cartItems.map((item) => (
                   <div className="col-lg-12" key={item.id}>

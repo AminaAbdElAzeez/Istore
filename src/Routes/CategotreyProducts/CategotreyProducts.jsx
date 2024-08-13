@@ -29,7 +29,7 @@ function CategoryProducts() {
       : "";
 
   return (
-    <div className="category-products">
+    <section className="category-products">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -44,7 +44,7 @@ function CategoryProducts() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

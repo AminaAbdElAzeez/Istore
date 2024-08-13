@@ -11,9 +11,12 @@ import {
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Spinner from "../../Spinner/Spinner";
 
 function BrowseCategorySlider() {
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   var settings = {
     dots: true,
     infinite: true,
@@ -50,43 +53,56 @@ function BrowseCategorySlider() {
   };
 
   useEffect(() => {
+    setLoading(true);
+
     fetch("https://dummyjson.com/products/categories")
       .then((res) => res.json())
-      .then((data) => setCategories(data));
+      .then((data) => {
+        setCategories(data);
+        setLoading(false);
+      });
   }, []);
 
   return (
     <div className="browse-category-slider">
-      <Slider {...settings}>
-        {categories.slice(0, 4).map((cat) => {
-          return (
-            <Link className="browse-category-item" key={cat.name} to={cat.name}>
-              {cat.name === "Beauty" ? (
-                <FontAwesomeIcon
-                  icon={faPalette}
-                  className="category-slide-icon"
-                />
-              ) : cat.name === "Fragrances" ? (
-                <FontAwesomeIcon
-                  icon={faWandMagicSparkles}
-                  className="category-slide-icon"
-                />
-              ) : cat.name === "Furniture" ? (
-                <FontAwesomeIcon
-                  icon={faCity}
-                  className="category-slide-icon"
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faBasketShopping}
-                  className="category-slide-icon"
-                />
-              )}
-              <h4>{cat.name}</h4>
-            </Link>
-          );
-        })}
-      </Slider>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <Slider {...settings}>
+          {categories.slice(0, 4).map((cat) => {
+            return (
+              <Link
+                className="browse-category-item"
+                key={cat.name}
+                to={cat.name}
+              >
+                {cat.name === "Beauty" ? (
+                  <FontAwesomeIcon
+                    icon={faPalette}
+                    className="category-slide-icon"
+                  />
+                ) : cat.name === "Fragrances" ? (
+                  <FontAwesomeIcon
+                    icon={faWandMagicSparkles}
+                    className="category-slide-icon"
+                  />
+                ) : cat.name === "Furniture" ? (
+                  <FontAwesomeIcon
+                    icon={faCity}
+                    className="category-slide-icon"
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faBasketShopping}
+                    className="category-slide-icon"
+                  />
+                )}
+                <h4>{cat.name}</h4>
+              </Link>
+            );
+          })}
+        </Slider>
+      )}
     </div>
   );
 }

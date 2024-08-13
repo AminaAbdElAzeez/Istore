@@ -5,7 +5,7 @@
 .cart-box {
   background-color: #fff;
   margin-bottom: 25px;
-  padding: 15px;
+  padding: 30px 15px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -26,9 +26,10 @@
   align-items: center;
 }
 .cart-info > img {
+  background-color: #e7f0db;
   width: 150px;
   height: 150px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -294,33 +295,17 @@
 @media screen and (max-width: 991px) {
   .cart-box,
   .cart-table {
-    width: 80%;
+    width: 95%;
     margin: 0 auto 25px auto;
   }
 }
 @media screen and (max-width: 767px) {
-  .cart-box,
-  .cart-table {
-    width: 350px;
-  }
   .cart-info {
     flex-direction: column;
     text-align: center;
   }
 }
 @media screen and (max-width: 470px) {
-  .carts-btn {
-    flex-direction: column;
-  }
-  .carts-btn a {
-    width: 90%;
-  }
-  .carts-btn a:first-child {
-    margin: 20px 0 20px 0;
-  }
-  .carts-btn a:last-child {
-    margin: 0px 0 30px 0;
-  }
   .copon {
     display: flex;
     justify-content: center;
@@ -333,10 +318,44 @@
     margin: 0 auto 20px auto;
   }
 }
+@media screen and (max-width: 494px) {
+  .carts-btn a:first-child {
+    margin: 20px 0 20px 0;
+  }
+  .carts-btn a:last-child {
+    margin: 0px 0 30px 0;
+  }
+  .carts-btn {
+    flex-direction: column;
+  }
+  .carts-btn > a {
+    font-size: 18px;
+    height: 47px;
+    width: 100%;
+    line-height: 42px;
+    display: block;
+  }
+  .copon > input,
+  .copon button {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 400px) {
-  .cart-box,
-  .cart-table {
-    width: 250px;
+  .cart-info-text > h4 {
+    font-size: 20px;
+  }
+  .cart-table > h4 {
+    font-size: 18px;
+  }
+  .cart-list li {
+    font-size: 16px;
+  }
+  .cart-list li:last-of-type,
+  .cart-list li:last-of-type span {
+    font-size: 18px;
+  }
+  .cart-info-desc {
+    font-size: 14px;
   }
   .empty-cart-message {
     font-size: 20px;
@@ -344,22 +363,19 @@
   .return-to-shop {
     padding: 7px 20px;
     font-size: 16px;
+    height: 45px;
   }
 }
 @media screen and (max-width: 320px) {
-  .carts-btn a {
-    width: 100%;
-  }
   .copon > input,
   .copon button {
     width: 100%;
   }
+  .cart-info-text > h4 {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 279px) {
-  .cart-box,
-  .cart-table {
-    width: 220px;
-  }
   .empty-cart-message {
     font-size: 18px;
   }

@@ -1,9 +1,11 @@
+import React from "react";
+
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Use BrowserRouter as Router
 import { AuthProvider } from "./AuthContext/AuthContext";
 import { CartProvider } from "./Context/CartProvider";
 import ErrorPage from "./Routes/ErrorPage/ErrorPage";
-import Home from "./Routes/Home/Home";
+// import Home from "./Routes/Home/Home";
 import SignUp from "./Routes/SignUp/SignUp";
 import LoginIn from "./Routes/LoginIn/LoginIn";
 import WishList from "./Routes/WishList/WishList";
@@ -19,6 +21,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "./index.css";
 import Account from "./Routes/Account/Account";
+import Spinner from "./components/Spinner/Spinner";
+import { LazyLoading } from "./components/LazyLoading/LazyLoading";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
@@ -26,8 +30,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <CartProvider>
         <Routes>
           <Route path="/" element={<Root />}>
-            <Route index element={<Home />} />
-            <Route path="home" element={<Home />} />
+            <Route index element={<LazyLoading />} />
+            <Route
+              path="home"
+              element={
+                <React.Suspense fallback={<Spinner />}>
+                  <LazyLoading />
+                </React.Suspense>
+              }
+            />
             <Route path="signup" element={<SignUp />} />
             <Route path="login" element={<LoginIn />} />
             <Route path="wishlist" element={<WishList />} />

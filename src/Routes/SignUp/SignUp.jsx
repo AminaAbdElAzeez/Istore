@@ -35,7 +35,7 @@ function SignUp() {
     setIsLoading(true);
     try {
       await signUp(formData);
-      navigate("/login"); // توجيه المستخدم إلى صفحة تسجيل الدخول بعد التسجيل
+      navigate("/login");
     } catch (error) {
       console.error("Sign up failed:", error);
       setError("Failed to sign up. Please try again.");

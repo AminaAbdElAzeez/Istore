@@ -2,6 +2,7 @@ import { useContext } from "react";
 import CartContext from "../../Context/CartProvider";
 import "./CheckOut.css";
 import image1 from "../../assets/Frame 834.png";
+import PagenationRoutes from "../../components/PagenationRoutes/PagenationRoutes";
 
 function CheckOut() {
   const { cartItems } = useContext(CartContext);
@@ -12,6 +13,14 @@ function CheckOut() {
   return (
     <section className="Billing">
       <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <PagenationRoutes
+              route="Home / cart / viewProducts "
+              title="Chechout"
+            />
+          </div>
+        </div>
         <div className="row">
           <div className="col-lg-5">
             <h3 className="bittling-title">Billing Details</h3>

@@ -12,7 +12,6 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      // استرجاع بيانات cart و wishlist عند تسجيل الدخول
       const storedCartItems =
         JSON.parse(localStorage.getItem(`cart_${user.email}`)) || [];
       const storedWishItems =
@@ -20,7 +19,6 @@ export const CartProvider = ({ children }) => {
       setCartItems(storedCartItems);
       setWishItems(storedWishItems);
     } else {
-      // مسح بيانات cart و wishlist إذا لم يكن هناك مستخدم
       setCartItems([]);
       setWishItems([]);
     }
@@ -28,7 +26,6 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      // تخزين بيانات cart و wishlist عند التحديث
       localStorage.setItem(`cart_${user.email}`, JSON.stringify(cartItems));
       localStorage.setItem(`wishlist_${user.email}`, JSON.stringify(wishItems));
     }

@@ -3,16 +3,20 @@ import RemoveProducts from "../../components/RemoveProducts/RemoveProducts";
 import TopHead from "../../components/TopHead/TopHead";
 import ProductsSlider from "../../components/Sale/ProductsSlider/ProductsSlider";
 import CartContext from "../../Context/CartProvider";
+import Spinner from "../../components/Spinner/Spinner";
 
 const WishList = () => {
   const [products, setProducts] = useState([]);
   const { wishItems } = useContext(CartContext);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
+        setLoading(false);
       })
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
@@ -27,7 +31,7 @@ const WishList = () => {
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <RemoveProducts products={wishItems} />
+            {loading ? <Spinner /> : <RemoveProducts products={wishItems} />}
           </div>
         </div>
         <hr style={{ marginBottom: "50px" }} />
@@ -38,7 +42,7 @@ const WishList = () => {
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <ProductsSlider products={products} />
+            {loading ? <Spinner /> : <ProductsSlider products={products} />}
           </div>
         </div>
       </div>

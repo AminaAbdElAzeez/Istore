@@ -9,11 +9,13 @@ import { faEye, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../../Modal/Modal";
 import CartContext from "../../../Context/CartProvider";
 import { Link } from "react-router-dom";
+import Spinner from "../../Spinner/Spinner";
 
 function ProductsSlider() {
   const [products, setProducts] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [cartData, setCartData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // Handle Modal
   const openModalHandler = (item) => {
@@ -59,61 +61,75 @@ function ProductsSlider() {
   const { addToWishList } = useContext(CartContext);
 
   useEffect(() => {
+    setLoading(true);
+
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
+        setLoading(false);
       })
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
   // console.log(cartData);
   return (
     <div className="product-slider">
-      <Slider {...settings}>
-        {products.map((product) => {
-          const discountedPrice =
-            product.price - product.price * (product.discountPercentage / 100);
-          return (
-            <div className="slider-content" key={product.id}>
-              <div className="slider-img">
-                <img src={product.images[0]} alt={product.title} />
-                <div className="slider-layer">
+      {loading ? (
+        <Spinner />
+      ) : (
+        <Slider {...settings}>
+          {products.map((product) => {
+            const discountedPrice =
+              product.price -
+              product.price * (product.discountPercentage / 100);
+            return (
+              <div className="slider-content" key={product.id}>
+                <div className="slider-img">
                   <img src={product.images[0]} alt={product.title} />
+                  <div className="slider-layer">
+                    <img src={product.images[0]} alt={product.title} />
+                  </div>
+                  <a
+                    className="add-to-cart"
+                    onClick={() => addToCart({ ...product, quantity: 1 })}
+                  >
+                    Add To Cart
+                  </a>
+                  <ul className="icons-list">
+                    <li>
+                      <a
+                        className="view"
+                        onClick={() => openModalHandler(product)}
+                      >
+                        <FontAwesomeIcon icon={faEye} />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="heart"
+                        onClick={() =>
+                          addToWishList({ ...product, quantity: 1 })
+                        }
+                      >
+                        <FontAwesomeIcon icon={faHeart} />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-                <a
-                  className="add-to-cart"
-                  onClick={() => addToCart({ ...product, quantity: 1 })}
-                >
-                  Add To Cart
-                </a>
-                <ul className="icons-list">
-                  <li>
-                    <a
-                      className="view"
-                      onClick={() => openModalHandler(product)}
-                    >
-                      <FontAwesomeIcon icon={faEye} />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="heart"
-                      onClick={() => addToWishList({ ...product, quantity: 1 })}
-                    >
-                      <FontAwesomeIcon icon={faHeart} />
-                    </a>
-                  </li>
-                </ul>
+                <h3 className="slider-title">{product.title.slice(0, 16)}</h3>
+                <span className="slider-price">
+                  ${product.price.toFixed(2)}
+                </span>
+                <span className="sale-price">
+                  ${discountedPrice.toFixed(2)}
+                </span>
+                <Rating rate={product.rating} />
+                <p className="sale">- {product.discountPercentage}%</p>
               </div>
-              <h3 className="slider-title">{product.title.slice(0, 16)}</h3>
-              <span className="slider-price">${product.price.toFixed(2)}</span>
-              <span className="sale-price">${discountedPrice.toFixed(2)}</span>
-              <Rating rate={product.rating} />
-              <p className="sale">- {product.discountPercentage}%</p>
-            </div>
-          );
-        })}
-      </Slider>
+            );
+          })}
+        </Slider>
+      )}
       <Link to="shop" className="view-all">
         View All Products
       </Link>

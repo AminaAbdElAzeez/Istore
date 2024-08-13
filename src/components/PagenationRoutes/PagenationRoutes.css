@@ -1,0 +1,31 @@
+.pagenation-routes {
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+.pagenation-routes > p {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+.pagenation-routes > p:hover {
+  color: crimson;
+}
+.pagenation-routes > p > span {
+  color: #8d8c8c;
+}
+@media screen and (max-width: 991px) {
+  .pagenation-routes {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 410px) {
+  .pagenation-routes > p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}

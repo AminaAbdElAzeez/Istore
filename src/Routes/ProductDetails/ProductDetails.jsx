@@ -7,10 +7,12 @@ import { faHeart, faRotate, faTruck } from "@fortawesome/free-solid-svg-icons";
 import TopHead from "../../components/TopHead/TopHead";
 import ProductsSlider from "../../components/Sale/ProductsSlider/ProductsSlider";
 import CartContext from "../../Context/CartProvider";
+import PagenationRoutes from "../../components/PagenationRoutes/PagenationRoutes";
 
 function ProductDetails() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const { id } = useParams();
   const { cartItems, addToCart } = useContext(CartContext);
   const { addToWishList } = useContext(CartContext);
@@ -44,12 +46,17 @@ function ProductDetails() {
   };
 
   const handleBuyNow = () => {
-    navigate("/checkout"); // Navigate to the Checkout page
+    navigate("/checkout");
   };
 
   return (
-    <div className="product-details">
+    <section className="product-details">
       <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <PagenationRoutes route={`Home / Products `} title="Product Num" />
+          </div>
+        </div>
         <div className="row">
           {loading ? (
             <div>Loading...</div>
@@ -177,7 +184,7 @@ function ProductDetails() {
               </div>
             </>
           ) : (
-            <div>No data found</div>
+            <p className="no-data">No Data 🤷‍♂️😳.</p>
           )}
         </div>
         <div className="row">
@@ -191,7 +198,7 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

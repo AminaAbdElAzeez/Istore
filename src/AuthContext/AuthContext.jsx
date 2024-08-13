@@ -22,18 +22,7 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("user");
   };
 
-  const signUp = async (newUserData) => {
-    // منطق التسجيل (يرجى تعديل هذا بناءً على متطلباتك)
-    // هنا نقوم بتسجيل المستخدم الجديد بدون تسجيل الدخول تلقائيًا
-    // على سبيل المثال: إرسال البيانات إلى الخادم
-    // const response = await fetch('/api/signup', {
-    //   method: 'POST',
-    //   body: JSON.stringify(newUserData),
-    //   headers: { 'Content-Type': 'application/json' },
-    // });
-    // const result = await response.json();
-    // إعداد بيانات المستخدم في الذاكرة المحلية فقط بعد تسجيل الدخول
-  };
+  const signUp = async (newUserData) => {};
 
   return (
     <AuthContext.Provider value={{ user, login, logout, signUp }}>

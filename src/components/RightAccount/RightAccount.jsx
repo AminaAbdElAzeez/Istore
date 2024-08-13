@@ -17,7 +17,7 @@ function RightAccount() {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value, // استخدم name بدلاً من id
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -72,7 +72,7 @@ function RightAccount() {
             <input
               type="text"
               placeholder="Md"
-              name="firstName" // استخدم name هنا
+              name="firstName"
               value={formData.firstName}
               onChange={handleChange}
             />
@@ -100,7 +100,7 @@ function RightAccount() {
             <input
               type="email"
               placeholder="rimel1111@gmail.com"
-              name="email" // استخدم name هنا
+              name="email"
               value={formData.email}
               onChange={handleChange}
             />
@@ -123,21 +123,21 @@ function RightAccount() {
             <input
               type="password"
               placeholder="Current Password"
-              name="currentPassword" // استخدم name هنا
+              name="currentPassword"
               value={formData.currentPassword}
               onChange={handleChange}
             />
             <input
               type="password"
               placeholder="New Password"
-              name="newPassword" // استخدم name هنا
+              name="newPassword"
               value={formData.newPassword}
               onChange={handleChange}
             />
             <input
               type="password"
               placeholder="Confirm New Password"
-              name="confirmPassword" // استخدم name هنا
+              name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
             />

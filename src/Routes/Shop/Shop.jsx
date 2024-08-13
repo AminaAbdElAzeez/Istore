@@ -24,7 +24,7 @@ function Shop() {
   );
 
   return (
-    <div className="shop">
+    <section className="shop">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -46,7 +46,7 @@ function Shop() {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

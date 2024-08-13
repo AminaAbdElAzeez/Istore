@@ -1,10 +1,16 @@
 import image from "../../assets/portrait-two-african-females-holding-shopping-bags-while-reacting-something-their-smartphone 1.png";
+import PagenationRoutes from "../PagenationRoutes/PagenationRoutes";
 import "./TopAbout.css";
 
 function TopAbout() {
   return (
     <section className="top-about">
       <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <PagenationRoutes route="Home" title="About" />
+          </div>
+        </div>
         <div className="row">
           <div className="col-lg-6">
             <h2 className="top-about-title">Our Story</h2>

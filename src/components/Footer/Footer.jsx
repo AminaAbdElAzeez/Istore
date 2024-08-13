@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Footer.css";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import image from "../../assets/Frame 719.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -45,19 +46,19 @@ function Footer() {
               <h3 className="footer-title">Account</h3>
               <ul className="footer-list">
                 <li>
-                  <a href="/#">My Account</a>
+                  <Link to="/account">My Account</Link>
                 </li>
                 <li>
-                  <a href="/#">Login / Register</a>
+                  <Link to="/login">Login / Register</Link>
                 </li>
                 <li>
-                  <a href="/#">Cart</a>
+                  <Link to="/cart">Cart</Link>
                 </li>
                 <li>
-                  <a href="/#">Wishlist</a>
+                  <Link to="/wishlist">Wishlist</Link>
                 </li>
                 <li>
-                  <a href="/#">Shop</a>
+                  <Link to="/shop">Shop</Link>
                 </li>
               </ul>
             </div>
@@ -68,13 +69,13 @@ function Footer() {
               <ul className="footer-list">
                 <li>Privacy Policy</li>
                 <li>
-                  <a href="/#">Terms Of Use</a>
+                  <Link to="/#">Terms Of Use</Link>
                 </li>
                 <li>
-                  <a href="/#">FAQ</a>
+                  <Link to="/#">FAQ</Link>
                 </li>
                 <li>
-                  <a href="/#">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>

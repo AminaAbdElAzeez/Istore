@@ -55,7 +55,7 @@ function CheckOut() {
                     <p>${item.price}</p>
                   </div>
                   <div className="check-box">
-                    <b>Subtotal:</b> ${totalPrice}
+                    <b>Subtotal:</b> ${item.price * item.quantity}
                   </div>
                   <hr />
                   <div className="check-box">

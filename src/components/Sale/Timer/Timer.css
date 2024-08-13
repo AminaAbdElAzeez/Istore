@@ -49,6 +49,7 @@
   text-align: center;
   margin: 0 20px 0 25px;
 }
+
 @media screen and (max-width: 767px) {
   .time-parent {
     flex-direction: column;
@@ -57,7 +58,7 @@
   .timer-content {
     justify-content: flex-start;
     padding: 0px;
-    margin: -20px 0 0 0px;
+    margin: 10px 0 0 0px;
   }
   .timer-item:first-child > p {
     margin-left: 0px !important;

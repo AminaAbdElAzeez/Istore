@@ -52,7 +52,7 @@ export const CartProvider = ({ children }) => {
     if (!user) {
       navigate("/signup");
     } else {
-      const isExist = wishItems.find((wishItem) => wishItem.id === item.id);
+      const isExist = wishItems.find((wishItem) => wishItem.id === +item.id);
       if (isExist) {
         setWishItems(
           wishItems.map((wishItem) =>

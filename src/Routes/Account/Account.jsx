@@ -9,7 +9,7 @@ function Account() {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <PagenationRoutes route="Home /" title="My Account" />
+            <PagenationRoutes route="Home" title="My Account" />
           </div>
         </div>
         <div className="row">

@@ -3,6 +3,7 @@ import image2 from "../../assets/attractive-woman-wearing-hat-posing-black-backg
 import image3 from "../../assets/Frame 707 (1).png";
 import image4 from "../../assets/652e82cd70aa6522dd785109a455904c (1).png";
 import "./NewArrival.css";
+import { Link } from "react-router-dom";
 
 function NewArrival() {
   return (
@@ -18,9 +19,9 @@ function NewArrival() {
                   Black and White version of the PS5 <br />
                   coming out on sale.
                 </p>
-                <a className="new-arrival-link" href="/#">
+                <Link className="new-arrival-link" to="/shop">
                   Shop Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -35,9 +36,9 @@ function NewArrival() {
                       Featured woman collections that
                       <br /> give you another vibe.
                     </p>
-                    <a className="new-arrival-link" href="/#">
+                    <Link className="new-arrival-link" to="/shop">
                       Shop Now
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -49,9 +50,9 @@ function NewArrival() {
                   <div className="new-arrival-text">
                     <h4 className="new-arrival-title">Speakers</h4>
                     <p className="new-arrival-desc">Amazon wireless speakers</p>
-                    <a className="new-arrival-link" href="/#">
+                    <Link className="new-arrival-link" to="/shop">
                       Shop Now
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -61,9 +62,9 @@ function NewArrival() {
                   <div className="new-arrival-text">
                     <h4 className="new-arrival-title">Perfume</h4>
                     <p className="new-arrival-desc">GUCCI INTENSE OUD EDP</p>
-                    <a className="new-arrival-link" href="/#">
+                    <Link className="new-arrival-link" to="/shop">
                       Shop Now
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

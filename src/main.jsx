@@ -1,7 +1,7 @@
 import React from "react";
 
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Use BrowserRouter as Router
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./AuthContext/AuthContext";
 import { CartProvider } from "./Context/CartProvider";
 import ErrorPage from "./Routes/ErrorPage/ErrorPage";

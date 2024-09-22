@@ -4,7 +4,7 @@ import TopHead from "../../TopHead/TopHead";
 
 function Timer() {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-08-31") - +new Date();
+    const difference = +new Date("2024-10-10") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

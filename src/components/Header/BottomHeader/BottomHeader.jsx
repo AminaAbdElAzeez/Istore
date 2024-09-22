@@ -31,7 +31,7 @@ function BottomHeader() {
     <nav className="navbar navbar-expand-lg">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          Exclusive
+          Istore
         </Link>
         <button
           className="navbar-toggler"

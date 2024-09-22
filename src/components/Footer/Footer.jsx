@@ -11,7 +11,7 @@ function Footer() {
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-12">
             <div className="footer-item">
-              <h3 className="footer-title footer-logo">Exclusive</h3>
+              <h3 className="footer-title footer-logo">Istore</h3>
               <a className="footer-link">Subscribe</a>
               <p className="footer-desc">Get 10% off your first order</p>
               <div className="footer-item-icon">
